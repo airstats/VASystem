@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
-namespace VASystem.Controllers
+namespace VASystem.Web.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
@@ -18,6 +19,7 @@ namespace VASystem.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
+        [Authorize]
         public string Get(int id)
         {
             return "value";
